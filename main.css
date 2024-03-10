@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(139, 195, 221);
+    color: rgb(78, 15, 129);
+    font-family: Arial;
+    margin: 0px;
+    text-decoration: none;
+}
+header {
+    padding: 10px; 
+    font-size: 16pt;
+}
+footer {
+    padding: 10px; 
+    font-size: 16pt;
+}
+main {
+    padding: 10px; 
+    font-size: 16pt;
+}
+a {text-decoration: none;}
