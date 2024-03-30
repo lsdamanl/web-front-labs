@@ -18,3 +18,19 @@ main {
     font-size: 16pt;
 }
 a {text-decoration: none;}
+
+a:link {
+    color: rgb(115, 19, 194);
+}
+a:visited {
+    color: lightblue;
+}
+
+a:hover {
+    color: rgb(78, 15, 129);
+    text-decoration: none;
+}
+a:active {
+    color: black;
+    opacity: 0.3;
+}
