@@ -37,3 +37,18 @@ a:active {
     color: black;
     opacity: 0.3;
 }
+
+div.menu {
+    border: 3px solid;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+div.menu:hover {
+    background-color: skyblue;
+    box-shadow: 0 0 10px gray;
+}
+
+h1.Заголовок {
+    text-align: center;
+}
