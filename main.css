@@ -12,10 +12,16 @@ header {
 footer {
     padding: 10px; 
     font-size: 16pt;
+    position: fixed;
+    text-align: right;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 main {
     padding: 10px; 
     font-size: 16pt;
+    margin: 10px 20px 45px;
 }
 a {text-decoration: none;
     transition: 0.5s 1s;
