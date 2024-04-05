@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шипилов Дмитрий Андреевич. Карточки</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .pictures {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        .pic {
+            flex: 0 0 20%; 
+            margin: 5px; 
+            position: relative; 
+        }
+        .pic img {
+            width: 100%;
+            height: auto;
+        }
+        .pic-label {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            display: none;
+        }
+        .pic:hover .pic-label {
+            display: block;
+        }
+        .pic-info {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            border: 2px solid #b8b2b2;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+        }
+        .pic:hover .pic-info {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<header>
+    НГТУ, ФБ, Лабораторная 4
+</header>
+<main>
+    <div class="pictures">
+        <div class="pic">
+            <img src="1pic.avif" height="300">
+            <div class="pic-label">Apple iPhone 15 Pro Max Natural Titanium</div>
+            <div class="pic-info">
+                Гарантия - 1 год<br>
+                Экран - 6.7"/2796x1290 Пикс<br>
+                Технология экрана - Super Retina XDR<br>
+                Тип процессора - A17 Pro<br>
+                Встроенная память (ROM) - 256 ГБ<br>
+                Основная камера МПикс - 48/12/12/TOF<br>
+                Разрешение видеосъемки - 3840x2160 Пикс (4K)<br>
+            </div>
+        </div>
+        <div class="pic">
+            <img src="2pic.avif" height="300">
+            <div class="pic-label">Realme C55 8/256GB Rainy Night</div>
+            <div class="pic-info">
+                Гарантия - 1 год<br>
+                Экран - 6.72"/2400x1080 Пикс<br>
+                Процессор - Mediatek 2 ГГц<br>
+                Оперативная память (RAM) - 8 ГБ<br>
+                Встроенная память (ROM) - 256 ГБ<br>
+                Основная камера МПикс - 64/2<br>
+                Фронтальная камера МПикс - 8<br>
+                Технология NFC - Да<br>
+            </div>
+        </div>
+        <div class="pic">
+            <img src="3pic.avif" height="300">
+            <div class="pic-label">HUAWEI P60 Pro 8/256GB Rococo Pearl </div>
+            <div class="pic-info">
+            Гарантия - 1 год<br>
+            Экран - 6.67"<br>
+            Процессор - Qualcomm Snapdragon 8 Gen 1<br>
+            Оперативная память (RAM) - 8 ГБ<br>
+            Встроенная память (ROM) - 256 ГБ<br>
+            Основная камера МПикс - 48/13/48<br>
+            Фронтальная камера МПикс - 13<br>
+            Оптическая стабилизация - Да<br>
+            </div>
+        </div>
+        <div class="pic">
+            <img src="4pic.avif" height="300">
+            <div class="pic-label">Xiaomi Redmi 12 8/256GB Midnight Black</div>
+            <div class="pic-info">
+            Гарантия - 1 год<br>
+            Экран - 6.79"/1080x2400 Пикс<br>
+            Процессор - Mediatek Helio G88 2 x 2.2 ГГц + 6 x 1.8 ГГц<br>
+            Оперативная память (RAM) - 8 ГБ<br>
+            Встроенная память (ROM) - 256 ГБ<br>
+            Основная камера МПикс - 50/8/2<br>
+            Фронтальная камера МПикс - 8<br>
+            Оптическая стабилизация - Да<br>
+            </div>
+        </div>
+        <div class="pic">
+            <img src="5pic.avif" height="300">
+            <div class="pic-label">Samsung Galaxy A15 LTE 4/128GB Blue Black</div>
+            <div class="pic-info">
+            Гарантия - 1 год<br>
+            Экран - 6.5"/2340x1080 Пикс<br>
+            Процессор - Mediatek Helio G99 2 x 2.2 ГГц + 6 x 2 ГГц<br>
+            Оперативная память (RAM) - 4 ГБ<br>
+            Встроенная память (ROM) - 128 ГБ<br>
+            Основная камера МПикс - 50/5/2<br>
+            Фронтальная камера МПикс - 13<br>
+            Технология NFC - Да<br>
+            </div>
+        </div>
+        <div class="pic">
+            <img src="6pic.avif" height="300">
+            <div class="pic-label">Samsung Galaxy Z Fold5 12/256GB Phantom Black</div>
+            <div class="pic-info">
+            Гарантия - 1 год<br>
+            Экран - 7.6"/2176x1812 Пикс<br>
+            Процессор - Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц<br>
+            Оперативная память (RAM) - 12 ГБ<br>
+            Встроенная память (ROM) - 256 ГБ<br>
+            Основная камера МПикс - 50/10/12/TOF<br>
+            Фронтальная камера МПикс - 10/4<br>
+            Оптическая стабилизация - Да<br>
+            </div>
+        </div>
+        <div class="pic">
+            <img src="7pic.avif" height="300">
+            <div class="pic-label">Samsung Galaxy Z Flip5 8/256GB Lavender</div>
+            <div class="pic-info">
+            Гарантия - 1 год<br>
+            Экран - 6.7"/2640x1080 Пикс<br>
+            Процессор - Qualcomm Snapdragon 8 Gen 2 1x3.36 ГГц + 2x2.8 ГГц + 2x2.8 ГГц + 3x2.0 ГГц<br>
+            Оперативная память (RAM) - 8 ГБ<br>
+            Встроенная память (ROM) - 256 ГБ<br>
+            Основная камера МПикс - 12/12/TOF<br>
+            Фронтальная камера МПикс - 10<br>
+            Оптическая стабилизация - Да<br>
+            </div>
+
+        </div>
+        <div class="pic">
+            <img src="8pic.avif" height="300">
+            <div class="pic-label">OPPO Find N3 16/512GB Gold</div>
+            <div class="pic-info">
+            Гарантия - 1 год<br>
+            Оперативная память (RAM) - 16 ГБ<br>
+            Встроенная память (ROM) - 512 ГБ<br>
+            Оптическая стабилизация - Да<br>
+            Технология NFC - Да<br>
+            Емкость аккумулятора - 4805 мАч<br>
+            Поддержка быстрой зарядки- Да<br>
+            Сканер отпечатка пальца на боковой грани - Да<br>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    &copy; Шипилов Дмитрий, ФБИ-24, 2 курс, 2024
+</footer>
+</body>
+</html>
