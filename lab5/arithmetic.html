@@ -57,6 +57,13 @@
                 alert("Ошибка: деление на ноль!");
             }
         }
+        function changeOutput(buttonNum, backColor, textColor) {
+            let output = document.getElementById("output");
+            output.innerHTML = "Нажата кнопка " + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.border = "2px solid " + borderColor;
+        }
     </script>
     <style>
         .message{
@@ -74,6 +81,11 @@
         header{
             cursor: pointer;
         }
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
     </style>
 </head>
 
@@ -90,6 +102,13 @@
         <div class="message" onclick="showProduct()">Нахождение произведения</div>
         <div class="message" onclick="showDivision()">Нахождение деления чисел</div>
         <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'purple', 'white', 'orange')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'green', 'black', 'yellow')">
+        </div>
+        <div id="output"></div>
     </main>
 
     <footer ondblclick="showMessage()">
