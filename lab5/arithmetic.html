@@ -14,6 +14,16 @@
             let result = a + b;
             alert("Сумма " + a + " и " + b + " равна " + result);
         }
+        function showAuthor() {
+            let author = "Автор страницы:\nШипилов Дмитрий Андреевич";
+            alert(author);
+
+        }
+        function showMessage() {
+            let message = "Приветствую вас на моей странице!\nДа-да, приветствую!"
+            alert(message);
+        }
+
     </script>
     <style>
         .message{
@@ -25,7 +35,12 @@
             text-align: center;
             cursor: pointer;
         }
-        
+        footer{
+            cursor: pointer;
+        }
+        header{
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -36,10 +51,10 @@
 
     <main>
         <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-        <div class="message">Узнать, кто автор страницы</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
     </main>
 
-    <footer>
+    <footer ondblclick="showMessage()">
         &copy; Шипилов Дмитрий Андреевич, ФБИ-24, 2 курс, 2024
     </footer>    
 </body>
