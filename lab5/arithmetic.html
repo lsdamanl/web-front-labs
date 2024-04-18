@@ -26,7 +26,37 @@
             let message = "Приветствую вас на моей странице!\nДа-да, приветствую!"
             alert(message);
         }
+        function showDifference() {
+            let inputA = document.getElementById("numberA");
+            let inputB = document.getElementById("numberB");
 
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert("Разность " + a + " и " + b + " равна " + result);
+        }
+        function showProduct() {
+            let inputA = document.getElementById("numberA");
+            let inputB = document.getElementById("numberB");
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a * b;
+            alert("Произведение " + a + " и " + b + " равно " + result);
+        }
+        function showDivision() {
+            let inputA = document.getElementById("numberA");
+            let inputB = document.getElementById("numberB");
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            if (b != 0) {
+                let result = a / b;
+                alert("Деление " + a + " на " + b + " равно " + result);
+            } else {
+                alert("Ошибка: деление на ноль!");
+            }
+        }
     </script>
     <style>
         .message{
@@ -56,6 +86,9 @@
         <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
         <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
         <div class="message" onclick="showSum()">Нахождение суммы чисел</div>
+        <div class="message" onclick="showDifference()">Нахождение разности чисел</div>
+        <div class="message" onclick="showProduct()">Нахождение произведения</div>
+        <div class="message" onclick="showDivision()">Нахождение деления чисел</div>
         <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
     </main>
 
@@ -63,4 +96,4 @@
         &copy; Шипилов Дмитрий Андреевич, ФБИ-24, 2 курс, 2024
     </footer>    
 </body>
-</html>A
+</html>
