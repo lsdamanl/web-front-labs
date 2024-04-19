@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скрытие кругов</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        let colors = ['red', 'orange', 'black', 'green', 'blue', 'indigo', 'violet', 'pink', 'brown', 'gray'];
+        let circles = [];
+        let areaWidth = 700; 
+        let areaHeight = 700; 
+        let areaTop = 50; 
+        let areaLeft = 100; 
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            for (let i = 0; i < 10; i++) {
+                let circle = document.createElement('div');
+                circle.className = 'circle';
+                circle.style.backgroundColor = colors[i];
+                circle.style.top = `${areaTop + Math.random() * areaHeight}px`;
+                circle.style.left = `${areaLeft + Math.random() * areaWidth}px`;
+                circle.innerText = i + 1;
+                circle.onclick = function() {
+                    this.style.opacity = '0';
+                    this.style.width = '0';
+                    this.style.height = '0';
+                };
+                circles.push(circle);
+                document.body.appendChild(circle);
+            }
+        });
+
+        function resetCircles() {
+            for (let i = 0; i < circles.length; i++) {
+                circles[i].style.opacity = '1';
+                circles[i].style.width = '100px';
+                circles[i].style.height = '100px';
+                circles[i].style.top = `${areaTop + Math.random() * areaHeight}px`;
+                circles[i].style.left = `${areaLeft + Math.random() * areaWidth}px`;
+            }
+        }
+    </script>
+    <style>
+       .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 1s ease;
+            color: white;
+            font-size: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <button onclick="resetCircles()">Сбросить</button>
+    </main>
+
+    <footer>
+        &copy; Шипилов Дмитрий Андреевич, ФБИ-24, 2 курс, 2024
+    </footer>    
+</body>
+</html>
