@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function calculate() {
+            let cart = document.getElementById('cart');
+            let inputs = cart.getElementsByTagName('input');
+            let total = 0;
+            for (let i = 0; i < inputs.length; i++) {
+                let quantity = inputs[i].value;
+                if (quantity === '') {
+                    quantity = 0;
+                }
+                let price = cart.getElementsByTagName('span')[i].innerText.split('(')[1].split('р')[0];
+                total += quantity * price;
+            }
+            document.getElementById('total').innerText = 'Общая цена: ' + total + ' р';
+        }
+
+        function clearCart() {
+            let inputs = document.getElementById('cart').getElementsByTagName('input');
+            for (let i = 0; i < inputs.length; i++) {
+                inputs[i].value = '';
+            }
+            document.getElementById('total').innerText = '';
+        }
+    </script>
+    
+    <style>
+        .item {
+            width: 350px;
+            height: 380px;
+            background-color: rgb(247, 210, 247);
+            border: 1px solid #000000;
+            display: inline-block;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <div id="cart">
+            <div class="item">
+                <h2>Корзина товаров</h2>
+                <div>
+                    <span>Яблоки (100р/шт): </span><br>
+                    <input type="number" min="0" placeholder="Введите количество">
+                </div>
+                <div>
+                    <span>Груши (80р/шт): </span><br>
+                    <input type="number" min="0" placeholder="Введите количество">
+                </div>
+                <div>
+                    <span>Апельсины (150р/шт): </span><br>
+                    <input type="number" min="0" placeholder="Введите количество">
+                </div>
+                <div>
+                    <span>Дыни (300р/шт): </span><br>
+                    <input type="number" min="0" placeholder="Введите количество">
+                </div>
+                <div>
+                    <span>Арбузы (245р/шт): </span><br>
+                    <input type="number" min="0" placeholder="Введите количество">
+                </div>
+                <button onclick="calculate()">Рассчитать</button>
+                <button onclick="clearCart()">Очистить</button>
+                <div id="total"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Шипилов Дмитрий Андреевич, ФБИ-24, 2 курс, 2024
+    </footer>    
+</body>
+</html>
