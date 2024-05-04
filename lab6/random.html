@@ -16,6 +16,21 @@
             margin: 50px auto;
             text-align: center;
         }
+
+        .help {
+        border: 1px solid;
+        width: 500px;
+        height: auto;
+        border-radius: 10px;
+        margin: 50px auto;
+        text-align: justify;
+        display: none;
+        font-size: 17px;
+    }
+        h2 {
+            text-align: center;
+            font-size: 35px;
+        }
     </style>
     <script>
         let number;
@@ -58,6 +73,20 @@
             document.getElementById("user-number").value = "";
             document.getElementById("result").innerHTML = "";
         }
+
+    function showRules() {
+        let help = document.getElementsByClassName("help");
+        help[0].style.display = "block";
+        document.getElementById("show-rules").style.display = "none";
+        document.getElementById("hide-rules").style.display = "block";
+    }
+
+    function hideRules() {
+        let help = document.getElementsByClassName("help");
+        help[0].style.display = "none";
+        document.getElementById("show-rules").style.display = "block";
+        document.getElementById("hide-rules").style.display = "none";
+    }
     </script>
 </head>
 
@@ -95,6 +124,21 @@
                 <button onclick="again()">Сыграть еще раз</button>
             </div>
         </div>
+
+        <div class="help">
+            <h2>Правила игры</h2>
+            <ol type="I">
+                <li>Игра начинается с нажатия кнопки "Сыграть в игру".</li>
+                <li>Компьютер загадывает число от 1 до 100.</li>
+                <li>Игроку нужно угадать это число, вводя свои предположения.</li>
+                <li>Если число игрока больше загаданного, компьютер сообщит "Вы ввели слишком большое число".</li>
+                <li>Если число игрока меньше загаданного, компьютер сообщит "Вы ввели слишком маленькое число".</li>
+            </ol>
+            <button id="hide-rules" onclick="hideRules()" style="display: none;">Скрыть правила игры</button>
+        </div>
+        
+        <button id="show-rules" onclick="showRules()">Показать правила игры</button>
+
     </main>
 
     <footer>
