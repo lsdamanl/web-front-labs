@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шипилов Дмитрий Андреевич. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .color {
+            width: 300px;
+            height: 200px;
+            margin: 20px;
+            padding: 20px;
+            color: black;
+            background-color: yellow;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+            transition: background-color 1.5s, color 1.5s;
+        }
+    </style>
+    <script>
+        function ChangeColor(div) {
+            if (div.style.backgroundColor == 'yellow') {
+                 div.style.backgroundColor = 'red';
+                 div.style.color = 'white';
+                 document.getElementById('color-name').innerHTML = 'красный';
+            }
+            else if (div.style.backgroundColor == 'red') {
+                 div.style.backgroundColor = 'black';
+                 div.style.color = 'white';
+                 document.getElementById('color-name').innerHTML = 'чёрный';
+            }
+            else if (div.style.backgroundColor == 'black') {
+                 div.style.backgroundColor = 'blue';
+                 div.style.color = 'white';
+                 document.getElementById('color-name').innerHTML = 'синий';
+            }
+            else if (div.style.backgroundColor == 'blue') {
+                 div.style.backgroundColor = 'green';
+                 div.style.color = 'black';
+                 document.getElementById('color-name').innerHTML = 'зелёный';
+            }
+            else {
+                div.style.backgroundColor = 'yellow';
+                div.style.color = 'black';
+                document.getElementById('color-name').innerHTML = 'жёлтый';
+            }
+        }   
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+       <div class="color" ondblclick="ChangeColor(this)">
+            Цвет: <span id="color-name">жёлтый</span><br>
+            Сделайте двойной щелчок, чтобы сменить
+
+       </div>
+
+    </main>
+
+    <footer>
+        &copy; Шипилов Дмитрий Андреевич, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
