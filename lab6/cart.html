@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шипилов Дмитрий Андреевич. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        table {
+            border: 1px rgb(0, 0, 0) solid;
+            margin: 9px 0;
+            width: 550px;
+            height: 220px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        button {
+            border: 0;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            width: 100px;
+            height: 25px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        button:hover {
+            background-color: white;
+            transition: 0.1s;
+        }
+    </style>
+    <script>
+        function showMoney() {
+            let balance = parseFloat(document.getElementById('balance').value);
+            let milk = parseInt(document.getElementById('milk').value) || 0;
+            let bread = parseInt(document.getElementById('bread').value) || 0;
+            let butter = parseFloat(document.getElementById('butter').value) || 0;
+            let orange = parseInt(document.getElementById('orange').value) || 0;
+            let water = parseInt(document.getElementById('water').value) || 0;
+            let bananas = parseInt(document.getElementById('bananas').value) || 0;
+            let watermelon = parseInt(document.getElementById('watermelon').value) || 0;
+
+            let output = document.getElementById('output');
+            let message = document.getElementById('message');
+
+            output.innerHTML = '';
+            message.innerHTML = '';
+
+            if (milk < 0 || bread < 0 || butter < 0 || orange < 0 || water < 0 || bananas < 0 || watermelon < 0) {
+                output.innerHTML = 'Выберите положительное количество товаров!';
+                output.style.color = 'red';
+            }
+            else if (milk + bread + butter + orange + water + bananas + watermelon == 0) {
+                output.innerHTML = 'Выберите хотя бы один товар!';
+                output.style.color = 'red';
+            }
+            else {
+                let sum = ((milk * 75) + (bread * 60) + (butter * 80) +
+                (orange * 159) + (water * 69) + (bananas * 120) + (watermelon * 36)).toFixed(2);
+                output.innerHTML = 'Итого: ' + sum + ' рублей';
+                output.style.color = 'black';
+                if (balance < sum) {
+                    message.innerHTML = 'На вашем счёте недостаточно средств!';
+                    message.style.color = 'red';
+                }
+                else {
+                    let dif = (balance - sum).toFixed(2);
+                    message.innerHTML = 'Ваш заказ успешно оформлен! <br> (Остаток: ' + dif + ')';
+                    message.style.color = 'green';
+                }
+            }
+        }
+        </script>
+        
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div style="margin: 150px auto; width: 550px;">
+            <div>
+                Мой баланс:
+                <input type="number" id="balance" value="" onkeydown="return event.key !== '-';">
+            </div>
+            <div style="margin: 10px 0;">
+                <table border="1">
+                    <tr>
+                        <th></th>
+                        <th>Название</th>
+                        <th>Цена</th>
+                        <th>Количество</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Молоко </td>
+                        <td>75 р</td>
+                        <td><input type="number" id="milk" value="" min="0" step="1"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Хлеб</td>
+                        <td>60 р</td>
+                        <td><input type="number" id="bread" value="" min="0" step="1"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Масло (200 гр)</td>
+                        <td>80 р</td>
+                        <td><input type="number" id="butter" value="" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Апельсин (В кг)</td>
+                        <td>159 р</td>
+                        <td><input type="number" id="orange" value="" min="0" step="1"></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Вода газированная</td>
+                        <td>69 р</td>
+                        <td><input type="number" id="water" value="" min="0" step="1"></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Бананы (в кг)</td>
+                        <td>120 р</td>
+                        <td><input type="number" id="bananas" value="" min="0" step="1"></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Арбуз (в кг)</td>
+                        <td>36 р</td>
+                        <td><input type="number" id="watermelon" value="" min="0" step="1"></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="but">
+                <button onclick="showMoney()">ОК</button>
+            </div>
+
+                <div id="output"></div>
+                <div id="message"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; Шипилов Дмитрий Андреевич, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
