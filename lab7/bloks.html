@@ -13,12 +13,31 @@
     <script>
         function addNewBlock() {
             let newBlock = document.createElement('div');
-            newBlock.style.backgroundColor = 'purple';
+            newBlock.style.backgroundColor = 'rgb(78, 15, 129)';
             newBlock.style.height = '40px';
             newBlock.style.width = '1000px';
             newBlock.style.margin = '20px';
 
             document.querySelector('main').appendChild(newBlock);
+        }
+        function addNewBlocks() {
+            let main = document.querySelector('main');
+            let numBlocks = document.querySelector('#numBlocks').value;
+            for(let i = 0; i<numBlocks; i++) { 
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'rgb(78, 15, 129)';
+                newBlock.style.height = '40px';
+                newBlock.style.width = `${1000 + i * 50}px`;
+                newBlock.style.margin = '20px';
+                newBlock.innerHTML = `Блок № ${i+1}: 2*${i}<sup>2</sup> = ${2 * i**2}`;
+                newBlock.style.color = 'white'; 
+                newBlock.style.textAlign = 'center';
+                newBlock.style.display = 'flex';
+                newBlock.style.justifyContent = 'center';
+                newBlock.style.alignItems = 'center'
+    
+                main.appendChild(newBlock);
+            }
         }
     </script>
 </head>
@@ -30,6 +49,8 @@
 
     <main>
        <button onclick="addNewBlock()">Добавить блок</button>
+       <button onclick="addNewBlocks()">Добавить блоки</button>
+       <input type="number" id="numBlocks" placeholder="Введите количество блоков">
     </main>
 
     <footer>
