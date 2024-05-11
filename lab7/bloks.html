@@ -79,6 +79,25 @@
                 newCircle.style.margin = '15px'
             }
         }
+        function addOpacityBlocks() {
+            let main = document.querySelector('main');
+            for(let i = 1; i <= 10; i++) {
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'rgb(78, 15, 129)';
+                newBlock.style.height = '40px';
+                newBlock.style.width = '1000px';
+                newBlock.style.margin = '20px';
+                newBlock.style.opacity = `${i * 0.1}`; 
+                newBlock.innerHTML = `Блок № ${i}`;
+                newBlock.style.color = 'white'; 
+                newBlock.style.textAlign = 'center';
+                newBlock.style.display = 'flex';
+                newBlock.style.justifyContent = 'center';
+                newBlock.style.alignItems = 'center'
+                main.appendChild(newBlock);
+            }
+        }
+
     </script>
 </head>
 
@@ -93,6 +112,8 @@
        <input type="number" id="numBlocks" placeholder="Введите количество блоков">
        <button onclick="add20_50()">20 => 50</button>
        <button onclick="add10_minus80()">10 => -80</button>
+       <button onclick="addOpacityBlocks()">Добавить блоки с прозрачностью</button>
+
     </main>
 
     <footer>
