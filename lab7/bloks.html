@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="../main.css">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
+    <style>
+    
+    </style>
+    <script>
+        function addNewBlock() {
+            let newBlock = document.createElement('div');
+            newBlock.style.backgroundColor = 'purple';
+            newBlock.style.height = '40px';
+            newBlock.style.width = '1000px';
+            newBlock.style.margin = '20px';
+
+            document.querySelector('main').appendChild(newBlock);
+        }
+    </script>
 </head>
 
 <body>
@@ -15,13 +29,11 @@
     </header>
 
     <main>
-        <li>
-            <a href="bloks.html">Добавление блоков</a>
-        </li>
+       <button onclick="addNewBlock()">Добавить блок</button>
     </main>
 
     <footer>
         &copy; Шипилов Дмитрий Андреевич, ФБИ-24, 2 курс, 2024
-    </footer>    
+    </footer>
 </body>
 </html>
