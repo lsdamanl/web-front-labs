@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шипилов Дмитрий Андреевич. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        button {
+            padding: 10px 20px;
+            background-color: rgb(78, 15, 129);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+        #euroRate {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 450px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+    <script>
+        function getEuroExchangeRate() {
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {
+                    const euroRate = json.Valute.EUR;
+                    const rateElement = document.getElementById('euroRate');
+                    rateElement.innerHTML = `
+                        <p>Текущий курс евро: ${euroRate.Value} руб.</p>
+                        <p>Дата запроса: ${json.Date}</p>
+                        <p>Курс за прошлую дату: ${euroRate.Previous} руб.</p>
+                        <p>Разница: ${euroRate.Value - euroRate.Previous} руб.</p>
+                        <p>Курс ${euroRate.Value > euroRate.Previous ? 'поднялся' : 'опустился'}.</p>
+                        <p><a href="https://www.cbr-xml-daily.ru/">Источник данных</a></p>
+                    `;
+                    rateElement.style.opacity = 1;
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="getEuroExchangeRate()">Получить курс евро</button>
+        <div id="euroRate"></div>
+    </main>
+
+    <footer>
+        &copy;Шипилов Дмитрий Андреевич, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
