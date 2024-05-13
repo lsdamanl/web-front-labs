@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шипилов Дмитрий Андреевич. Котировки акций компании «Ренессанс Страхование»</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+    
+    </style>
+    <script>
+        function showStocks() {
+            const dates = [
+                "26.04.2024", "27.04.2024", "29.04.2024", "30.04.2024", "02.05.2024",
+                "03.05.2024", "06.05.2024", "07.05.2024", "08.05.2024", "10.05.2024"
+            ];
+            const stocks = [
+                107.11, 107.14, 107.04, 108.06, 108.50,
+                109.00, 106.34, 107.52, 107.46, 106.24
+            ];
+            let table = document.getElementById('stocks-table')
+            for(let i = 0; i < stocks.length; i++) {
+                let tr = document.createElement('tr');
+                let tdDate = document.createElement('td');
+                tdDate.innerText = dates[i];
+                let tdStock = document.createElement('td');
+                tdStock.innerText = stocks[i];
+                let tdDiff = document.createElement('td');
+                tdDiff.innerText = i > 0 ? (stocks[i] - stocks[i-1]).toFixed(2) : '-';
+                tr.appendChild(tdDate);
+                tr.appendChild(tdStock);
+                tr.appendChild(tdDiff);
+                table.appendChild(tr);
+            }
+            let sum = 0;
+            let min = stocks[0];
+            let max = stocks[0];
+            for(let i = 0; i < stocks.length; i++) {
+                sum += stocks[i];
+                if (stocks[i] < min) min = stocks[i];
+                if (stocks[i] > max) max = stocks[i];
+            }
+            let average = sum / stocks.length;
+            average = average.toFixed(2);
+            document.getElementById('stocks-detail').innerText = "Средняя стоимость акции: " + average + "\nМинимальная стоимость акции: " + min + " \nМаксимальная стоимость акции: " + max;
+            document.getElementById('stocks-button').style.display = 'none';
+        }
+        
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="showStocks()">Курс акций компании «Ренессанс Страхование»</button>
+        <table border="1" id="stocks-table">
+            <tr>
+                <th>Дата</th>
+                <th>Цена акций</th>
+                <th>Разница</th>
+            </tr>
+        </table>
+        <div id="stocks-detail"></div>
+    </main>
+
+    <footer>
+        &copy; Шипилов Дмитрий Андреевич, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
