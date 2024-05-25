@@ -17,12 +17,23 @@ function showDate() {
 
     let result = '';
 
-            for (let [localeName, localeCode] of Object.entries(locales)) {
-                result += `${localeName}: ${today.toLocaleString(localeCode)}<br>`;
-            }
+    for (let [localeName, localeCode] of Object.entries(locales)) {
+        result += `${localeName}: ${today.toLocaleString(localeCode)}<br>`;
+    }
 
-            out.innerHTML = result;
-        
-        }
 
-        
+    let currentYear = today.getFullYear();
+    let currentMonth = today.toLocaleString('ru-RU', { month: 'long' });
+    let currentDate = today.getDate();
+    let currentDay = today.toLocaleString('ru-RU', { weekday: 'long' });
+
+
+    let dateInfo = `
+        Текущий год: ${currentYear}<br>
+        Текущий месяц: ${currentMonth}<br>
+        Текущая дата: ${currentDate}<br>
+        День недели: ${currentDay}<br>
+    `;
+
+    out.innerHTML = result + `<div id="date-info">${dateInfo}</div>`;
+}
