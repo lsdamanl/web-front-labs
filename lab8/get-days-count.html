@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шипилов Дмитрий Андреевич. Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card label {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .card input[type="date"] {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .card button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(78, 15, 129);
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .card button:hover {
+            background-color: rgb(69, 4, 122);
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+    <script src="get-days-count.js" defer></script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+    </header>
+
+    <main>
+        <div class="card">
+            <div>
+                <label>Дата рождения: <input type="date" id="birthdate"></label>
+            </div>
+            <div>
+                <button onclick="showDaysCount()">Показать число дней</button>
+                <button onclick="clearInput()">Очистить</button>
+            </div>
+            <div id="result"></div>
+        </div>
+    </main>
+
+    <footer>
+        &copy;Шипилов Дмитрий Андреевич, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
