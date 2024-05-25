@@ -37,3 +37,17 @@ function showDate() {
 
     out.innerHTML = result + `<div id="date-info">${dateInfo}</div>`;
 }
+function getDayOfWeek() {
+    let day = document.getElementById('day').value;
+    let month = document.getElementById('month').value - 1; 
+    let year = document.getElementById('year').value;
+
+    if (day && month >= 0 && year) {
+        let date = new Date(year, month, day);
+        let options = { weekday: 'long' };
+        let dayOfWeek = date.toLocaleString('ru-RU', options);
+        document.getElementById('day-of-week').innerText = `День недели: ${dayOfWeek}`;
+    } else {
+        document.getElementById('day-of-week').innerText = 'Пожалуйста, введите корректные значения даты.';
+    }
+}

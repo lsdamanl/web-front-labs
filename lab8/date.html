@@ -26,12 +26,35 @@
         }
         .locale-entry span {
             font-weight: bold;
-            color: #0073e6;
+          
         }
         #date-info {
             margin-top: 20px;
             font-size: 21px;
             
+        }
+        .input-group label {
+            margin-right: 10px;
+            
+        }
+        #day-of-week {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            width: 640px;
+            height: auto;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
     <script src="lab8.js"></script>
@@ -45,6 +68,18 @@
 
     <main>
         <div id="current-date"></div>
+        <div class="card">
+            <div class="input-group">
+                <label for="day">День:</label>
+                <input type="number" id="day" min="1" max="31">
+                <label for="month">Месяц:</label>
+                <input type="number" id="month" min="1" max="12">
+                <label for="year">Год:</label>
+                <input type="number" id="year">
+                <button onclick="getDayOfWeek()">День недели</button>
+            </div>
+            <div id="day-of-week"></div>
+        </div>
     </main>
 
     <footer>
